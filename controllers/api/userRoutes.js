@@ -1,5 +1,51 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, Dog, Location } = require('../../models');
+
+router.get('/', async (req, res) => {
+  try {
+    const users = await User.findAll({
+      include: [
+        {
+          model: Dog,
+          attributes: ['name'],
+        },
+        {
+          model: Location,
+          attributes: ['name'],
+        },
+      ],
+    });
+    res.status(200).json(users);
+  } catch (error) {
+    res.status(500).json(error);
+  }
+});
+
+router.get('/:id', async (req, res) => {
+  try {
+    const user = await User.findOne({
+      where: {
+        id: req.params.id,
+      },
+      include: [
+        {
+          model: Dog,
+          attributes: ['name'],
+        },
+        {
+          model: Location,
+          attributes: ['name'],
+        },
+      ],
+    });
+    if (!user) {
+      res.status(404).json('No user found with that ID');
+    }
+    res.status(200).json(user);
+  } catch (error) {
+    res.status(500).json(error);
+  }
+});
 
 router.post('/', async (req, res) => {
   try {
@@ -55,6 +101,38 @@ router.post('/logout', (req, res) => {
     });
   } else {
     res.status(404).end();
+  }
+});
+router.put('/', async (req, res) => {
+  try {
+    const user = await User.update(req.body, {
+      where: {
+        id: req.session.user_id,
+      },
+    });
+    if (!user) {
+      res.status(404).json('No user found with that ID');
+    }
+    res.status(200).json(user);
+  } catch (error) {
+    res.status(500).json(error);
+  }
+});
+router.delete('/:id', async (req, res) => {
+  try {
+    const user = await User.destroy({
+      where: {
+        id: req.session.user_id,
+      },
+    });
+    if (!user) {
+      res.status(404).json('No user found with that ID');
+    }
+    req.session.destroy(() => {
+      res.status(204).end().json('User has been deleted successfully');
+    });
+  } catch (error) {
+    res.status(500).json(error);
   }
 });
 
