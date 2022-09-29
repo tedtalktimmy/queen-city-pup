@@ -5,25 +5,29 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TITLE</title>
-  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel="stylesheet" href="/style.css">
 </head>
 
 <body>
   <header>
-    <h1>TITLE</h1>
   </header>
-  <nav>
+  <nav class="nav navbar bg-success">
+    
+    <a><img src="../../public/images/QueenCityPupsLogo (1).png"></a>
     <a href="/">Home</a>
+    <a href="/">Pup Parks</a>
+    <a href="/">Dog Stores</a>
+    <a href="/">Playdates</a>
     {{#if loggedIn}}
     <button id="logout" class="btn-no-style">Logout</button>
     {{else}}
     <a href="/login">Login</a>
     {{/if}}
-  </nav>T
+  </nav>
   <main>
     <aside>
-      <h2>WORDS</h2>
+      {{!-- <h2>WORDS</h2> --}}
     </aside>
     <div class="">
       {{{body}}}

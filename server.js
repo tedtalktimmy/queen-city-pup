@@ -33,8 +33,8 @@ app.use(session(sess));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
+// app.use('/images', express.static(path.join(__dirname, '/public/images')));
 app.use(routes);
-
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log(`listening at http://localhost:${PORT}`));
 });
