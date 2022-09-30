@@ -64,31 +64,37 @@ const seedDatabase = async () => {
   await Dog.create({
     dog_name: 'Sparky',
     about: 'lorem sdjkhfsdj',
+    image: '/images/sparky.jpg',
     owner_id: 2,
   });
   await Dog.create({
     dog_name: 'Rover',
     about: 'sdhfiuhsdrlirgh',
+    image: '/images/rover.jpg',
     owner_id: 2,
   });
   await Dog.create({
     dog_name: 'Max',
     about: 'dfiugsrkrugfsh',
+    image: '/images/max.jpg',
     owner_id: 3,
   });
   await Dog.create({
     dog_name: 'Dexter',
     about: 'dhfhzsdgf',
+    image: '/images/dexter.jpg',
     owner_id: 4,
   });
   await Dog.create({
     dog_name: 'Brady',
     about: 'fiughgrh',
+    image: '/images/brady.jpg',
     owner_id: 5,
   });
   await Dog.create({
     dog_name: 'Zeus',
     about: 'foghlidrbuhgdijg',
+    image: '/images/zeus.jpg',
     owner_id: 6,
   });
   await Dog.create({
