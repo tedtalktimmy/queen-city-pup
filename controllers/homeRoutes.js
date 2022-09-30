@@ -30,4 +30,14 @@ router.get('/stores', (req, res) => {
   res.render('stores');
 });
 
+router.get('/location', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+
+  res.render('location');
+});
+
+
 module.exports = router;
