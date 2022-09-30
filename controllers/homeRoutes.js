@@ -41,7 +41,15 @@ router.get('/dogs', (req, res) => {
     console.log(dogData);
     res.render('allDogs', dogData);
   });
-
-  
 });
+router.get('/location', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+
+  res.render('location');
+});
+
+
 module.exports = router;
