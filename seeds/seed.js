@@ -1,5 +1,5 @@
 const sequelize = require('../config/connection');
-const { User, Dog, Location } = require('../models');
+const { User, Dog, Location, UserLocation } = require('../models');
 
 // const userData = require('./userData.json');
 
@@ -23,37 +23,31 @@ const seedDatabase = async () => {
     name: 'Ralph',
     email: 'ralph@aol.com',
     password: '12dfghdfh345678',
-    location_id: [1],
   });
   await User.create({
     name: 'Jenny',
     email: 'jenny@jenny.com',
     password: '125dfg6778',
-    location_id: [2],
   });
   await User.create({
     name: 'Matt',
     email: 'matt@me.com',
     password: 'ssdhfgfgfoushfi',
-    location_id: [3],
   });
   await User.create({
     name: 'Juanita',
     email: 'jjy@comcast.net',
     password: 'lovemypup56',
-    location_id: [1],
   });
   await User.create({
     name: 'John',
     email: 'jpm@me.com',
     password: 'create$U98765',
-    location_id: [4],
   });
   await User.create({
     name: 'Jill',
     email: 'jill@yahoo.com',
     password: 'ght56dfh78',
-    location_id: [3],
   });
   await Dog.create({
     dog_name: 'Buddy',
@@ -100,7 +94,33 @@ const seedDatabase = async () => {
   await Dog.create({
     dog_name: 'Bentley',
     about: 'djhfiseruhindrgh',
+    image: '/images/zeus.jpg',
     owner_id: 5,
+  });
+
+  await UserLocation.create({
+    user_id: 1,
+    location_id: 1,
+  });
+
+  await UserLocation.create({
+    user_id: 2,
+    location_id: 2,
+  });
+
+  await UserLocation.create({
+    user_id: 3,
+    location_id: 3,
+  });
+
+  await UserLocation.create({
+    user_id: 4,
+    location_id: 4,
+  });
+
+  await UserLocation.create({
+    user_id: 1,
+    location_id: 4,
   });
 
   console.log('data seeded');

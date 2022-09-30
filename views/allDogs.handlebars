@@ -25,9 +25,11 @@
       <p>
         {{dog.about}}
       </p>
-      <p>
-        {{dog.owner_id}}
-      </p>
+
+        {{#each dog.user.locations as |location|}}
+        <p>{{location.name}}</p>
+        {{/each}}
+
     </div>
   {{/each}}
 </div>
