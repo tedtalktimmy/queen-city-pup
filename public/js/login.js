@@ -34,7 +34,7 @@ const signupFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/');
+      document.location.replace('/dates');
     } else {
       alert('Failed to sign up.');
     }
