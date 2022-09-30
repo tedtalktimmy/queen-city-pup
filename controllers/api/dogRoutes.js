@@ -96,4 +96,23 @@ router.delete('/:id', async (req, res) => {
   }
 });
 
+// get all dishes
+router.get('/', async (req, res) => {
+  res.render('all', {dog});
+});
+
+// get one dish
+router.get('/dog/:num', async (req, res) => {
+  const found = dogs.find(dog => +dog.id === +req.params.num);
+  return res.render('dogs', dogs[req.params.num - 1]);
+});
+
+// get one dish
+router.get('/dog/by-name/:name', async (req, res) => {
+  const nameParam = req.params.name.trim().toLowerCase().replaceAll(' ', '-');
+  const found = dogs.find(dog => dog.dog_name.toLowerCase().replaceAll(' ', '-') === nameParam);
+  console.log(nameParam);
+  return res.render('dog', { dog: found });
+});
+
 module.exports = router;

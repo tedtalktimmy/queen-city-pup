@@ -35,9 +35,9 @@ body {
 }
 
 /* LAYOUT */
-.container {
+/* .container {
   display: flex;
   flex-flow: column wrap;
   align-content: flex-start;
   align-items: center;
-}
+} */
