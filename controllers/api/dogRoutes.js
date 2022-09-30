@@ -97,7 +97,7 @@ router.delete('/:id', async (req, res) => {
 });
 
 // get all dishes
-router.get('/', async (req, res) => {
+router.get('/dates', async (req, res) => {
   res.render('all', {dog});
 });
 
