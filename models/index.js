@@ -3,12 +3,12 @@ const Dog = require('./Dog');
 const Location = require('./Location');
 
 User.hasMany(Dog, {
-  foreignKey: 'user_id',
+  foreignKey: 'owner_id',
   //onDelete: 'CASCADE',
 });
 
 Dog.belongsTo(User, {
-  foreignKey: 'user_id',
+  foreignKey: 'owner_id',
 });
 Location.hasMany(User, {
   foreignKey: 'location_id',
