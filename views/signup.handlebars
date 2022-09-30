@@ -1,32 +1,46 @@
-  <div class="login-card">
-    <h2 class="page-title">Signup</h2>
-    <form class="form signup-form">
-      <div class="form-group">
-        <label for="username-signup">Username:</label>
-        <input class="form-input" type="text" id="username-signup" />
-      </div>
-      <div class="form-group">
-        <label for="email-signup">Email:</label>
-        <input class="form-input" type="text" id="email-signup" />
-      </div>
-      <div class="form-group">
-        <label for="password-signup">Password:</label>
-        <input class="form-input" type="password" id="password-signup" />
-      </div>
-      <div class="form-group">
-        <label for="'dog-signup">Dog Name:</label>
-        <input class="form-input" type="text" id="dog-signup" />
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">signup</button>
-      </div>
-      <div class="form-group">
-        <label for="dog-about">Tell us a little bit about your dog!</label>
-        <input class="form-input" type="text" id="dog-about" />
-      </div>
-          <a class="nav-link align-text-right" href="/login">Already have an account?</a>
-    </form>
+<div class="container ">
+  <div class="row mx-auto d-flex align-items-center">
+    <div class="col-md-6 col-md-offset-3 mx-auto">
+      <br>
+      <h2 class="text-center">Sign up here!</h2>
+      <form class="signUp">
+        <div class="form-control-lg">
+          <label>Username</label>
+          <input type="username" class="form-control" id="username-input" placeholder="Username">
+        </div>
+        <div class="form-control-lg">
+          <label>Email</label>
+          <input type="email" class="form-control" id="email-input" placeholder="Email">
+        </div>
+        <div class="form-control-lg">
+          <label>Password</label>
+          <input type="password" class="form-control" id="password-input" placeholder="Password">
+        </div>
+        <div class="form-control-lg">
+          <label>Dog Name</label>
+          <input type="dogName" class="form-control" id="dogName-input" placeholder="DogName">
+        </div>
+        <div class="form-control-lg">
+          <label>Tell us a bit about your dog!</label>
+          <input type="dogInfo" class="form-control" id="dogInfo-input" placeholder="DogName">
+        </div>
+        <div class="form-control-lg">
+          <label>Please select where your pup likes to play?</label>
+          <select type="location" id="dogLocations">
+            <option value="location">location</option>
+            <option value="location">location</option>
+            <option value="location">location</option>
+            <option value="location">location</option>
+          </select>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-success">Sign up</button>
+      </form>
+      <br />
+      <p>Already have an account? Click <a href="/">here</a> to login!</p>
+    </div>
   </div>
 </div>
 
-<script src="./js/signup.js"></script>
+<script src="../public/js/login.js"></script>
+

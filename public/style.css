@@ -34,8 +34,13 @@ body {
   text-align: center;
 }
 
+<<<<<<< HEAD
 /* LAYOUT */
 /* .container {
+=======
+/* LAYOUT
+.container {
+>>>>>>> b0446725ed59df57820ca3bcb5c6d95310189bdd
   display: flex;
   flex-flow: column wrap;
   align-content: flex-start;
