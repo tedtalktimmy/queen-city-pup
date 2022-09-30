@@ -5,16 +5,17 @@
     </h2>
   </div>
   <!-- For each dish in the array of dish objects, the following <div> will be rendered. -->
-  {{#each dog as |dog_name|}}
+  {{#each dogs as |dog|}}
     <div class="dish col-md-5">
       <!-- We use dish.id instead of <od> and <li> elements. -->
       <p>
         {{dog.id}}.
-        {{dog_name}}
+        {{dog.dog_name}}
       </p>
     </div>
     <div class="col-md-7">
       <p>
+        {{dog.about}}
       </p>
     </div>
   {{/each}}
