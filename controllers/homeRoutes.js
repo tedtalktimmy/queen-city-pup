@@ -32,14 +32,14 @@ router.get('/dates', (req, res) => {
     res.redirect('/');
     return;
   }
-  Dog.findAll().then((dogs) => {
-    const dogData = dogs.map((dog) =>
+  Dog.findAll().then((dogData) => {
+    const dogs = dogData.map((dog) =>
       dog.get({
         plain: true,
       })
     );
-    console.log(dogData);
-    res.render('allDogs', dogData);
+    console.log(dogs);
+    res.render('allDogs', {dogs});
     return;
   });
 });
