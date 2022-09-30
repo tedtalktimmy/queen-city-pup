@@ -1,19 +1,27 @@
-<div class="menu-container">
+<div class="card">
   <div class="card-header col-md-10">
     <h2>
       Playdate Pups
     </h2>
-  </div>
-  <!-- For each dish in the array of dish objects, the following <div> will be rendered. -->
+    </div>
+    
+ 
+ 
   {{#each dogs as |dog|}}
     <div class="dish col-md-5">
-      <!-- We use dish.id instead of <od> and <li> elements. -->
+      
       <p>
-        {{dog.id}}.
+        <a href="/furr-baby/{{dog.id}}">
         {{dog.dog_name}}
+        </a>
       </p>
     </div>
     <div class="col-md-7">
+      {{#if dog.image}}
+      <img src="{{dog.image}}" alt="{{dog.dog_name}}">
+      {{else}}
+      <img src="https://via.placeholder.com/225" alt="placeholder">
+      {{/if}}
       <p>
         {{dog.about}}
       </p>

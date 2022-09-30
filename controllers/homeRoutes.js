@@ -39,10 +39,24 @@ router.get('/dates', (req, res) => {
       })
     );
     console.log(dogs);
-    res.render('allDogs', {dogs});
+    res.render('allDogs', { dogs });
     return;
   });
 });
+
+router.get('/furr-baby/:id', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+  Dog.findByPk(req.params.id).then((dogData) => {
+    const dog = dogData.get();
+    console.log(dog);
+    res.render('dog', { dog });
+    return;
+  });
+});
+
 router.get('/location', (req, res) => {
   if (req.session.loggedIn) {
     res.redirect('/');
@@ -51,6 +65,5 @@ router.get('/location', (req, res) => {
 
   res.render('location');
 });
-
 
 module.exports = router;
