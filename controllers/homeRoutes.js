@@ -27,7 +27,7 @@ router.get('/stores', (req, res) => {
   }
   res.render('stores');
 });
-router.get('/dogs', (req, res) => {
+router.get('/dates', (req, res) => {
   if (req.session.loggedIn) {
     res.redirect('/');
     return;
@@ -40,6 +40,7 @@ router.get('/dogs', (req, res) => {
     );
     console.log(dogData);
     res.render('allDogs', dogData);
+    return;
   });
 });
 router.get('/location', (req, res) => {
