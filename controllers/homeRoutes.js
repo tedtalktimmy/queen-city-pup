@@ -1,9 +1,9 @@
 const router = require('express').Router();
-const {User} = require ('../models');
+const { User, Dog, Location } = require('../models');
 
 router.get('/', async (req, res) => {
   const userData = await User.findAll();
-  const users = userData.map(user => user.get());
+  const users = userData.map((user) => user.get());
   res.render('index', { users });
 });
 
@@ -20,16 +20,28 @@ router.get('/signup', (req, res) => {
   res.render('signup');
 });
 
-
 router.get('/stores', (req, res) => {
   if (req.session.loggedIn) {
     res.redirect('/');
     return;
   }
-
   res.render('stores');
 });
-
+router.get('/dogs', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+  Dog.findAll().then((dogs) => {
+    const dogData = dogs.map((dog) =>
+      dog.get({
+        plain: true,
+      })
+    );
+    console.log(dogData);
+    res.render('allDogs', dogData);
+  });
+});
 router.get('/location', (req, res) => {
   if (req.session.loggedIn) {
     res.redirect('/');

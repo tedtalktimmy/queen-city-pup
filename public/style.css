@@ -4,3 +4,40 @@ body {
   height: 100%;
   
 }
+.dog-card-header {
+  font-size: 1.5rem;
+  color: var(--tertiary);
+  margin: 0;
+  background-color: var(--light);
+  padding: 0.625rem;
+  border-bottom-style: solid;
+}
+
+.dog-card {
+  margin: 20px;
+  flex: 0 1 300px;
+  padding: 5px;
+  width: 35%;
+  min-height: 100%;
+  min-width: 35%;
+  border: 3px solid var(--primary);
+  border-radius: var(--border-radius);
+  border-style: solid;
+  border-width: medium;
+  background-color: var(--light);
+  color: var(--dark);
+}
+
+.card-body {
+  padding: 2.5%;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+/* LAYOUT */
+.container {
+  display: flex;
+  flex-flow: column wrap;
+  align-content: flex-start;
+  align-items: center;
+}

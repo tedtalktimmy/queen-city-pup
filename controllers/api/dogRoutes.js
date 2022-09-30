@@ -7,13 +7,13 @@ router.get('/', async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['name'],
-          include: [
-            {
-              model: Location,
-              attributes: ['name'],
-            },
-          ],
+          // attributes: ['name'],
+          // include: [
+          //   {
+          //     model: Location,
+          //     attributes: ['name'],
+          //   },
+          // ],
         },
       ],
     });
@@ -32,17 +32,17 @@ router.get('/:id', async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['name', 'email'],
-          include: [
-            {
-              model: Location,
-              attributes: ['name'],
-            },
-            {
-              model: Dog,
-              attributes: ['name'],
-            },
-          ],
+          // attributes: ['name', 'email'],
+          // include: [
+          //   {
+          //     model: Location,
+          //     attributes: ['name'],
+          //   },
+          //   {
+          //     model: Dog,
+          //     attributes: ['dog_name'],
+          //   },
+          // ],
         },
       ],
     });
