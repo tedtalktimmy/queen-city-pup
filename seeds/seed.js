@@ -58,6 +58,7 @@ const seedDatabase = async () => {
   await Dog.create({
     dog_name: 'Buddy',
     about: 'ihsdkfghsli',
+    image: '/images/buddy.jpg',
     owner_id: 1,
   });
   await Dog.create({

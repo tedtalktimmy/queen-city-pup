@@ -1,0 +1,20 @@
+<div class="dog-card">
+  <div class="dog-card-header">
+    {{dog.dog_name}}
+  </div>
+  <div class="card-body">
+    {{#if dog.image}}
+    <img src="{{dog.image}}" alt="{{dog.dog_name}}">
+    {{else}}
+    <img src="https://via.placeholder.com/225" alt="placeholder">
+    {{/if}}
+    <p>
+      About:
+      {{dog.about}}
+    </p>
+    <p>
+      Owner:
+      {{dog.owner_name}}
+    </p>
+  </div>
+</div>
