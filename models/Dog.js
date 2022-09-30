@@ -19,6 +19,11 @@ Dog.init(
       type: DataTypes.TEXT,
       allowNull: false,
     },
+
+    image: {
+      type: DataTypes.STRING,
+
+    },
     owner_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
