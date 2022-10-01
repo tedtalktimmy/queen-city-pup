@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Dog, Location } = require('../models');
+const { User, Dog, Location, UserLocation } = require('../models');
 
 router.get('/', async (req, res) => {
   const userData = await User.findAll();
@@ -32,13 +32,27 @@ router.get('/dates', (req, res) => {
     res.redirect('/');
     return;
   }
-  Dog.findAll().then((dogData) => {
+  Dog.findAll({
+    include: [
+      {
+        model: User,
+        attributes: ['name', 'email'],
+        include: [
+          {
+            model: Location,
+            through: UserLocation,
+          },
+        ],
+      },
+    ],
+  }).then((dogData) => {
     const dogs = dogData.map((dog) =>
       dog.get({
         plain: true,
       })
     );
     console.log(dogs);
+    console.log(dogs[0].user.locations);
     res.render('allDogs', { dogs });
     return;
   });
@@ -49,8 +63,28 @@ router.get('/furr-baby/:id', (req, res) => {
     res.redirect('/');
     return;
   }
-  Dog.findByPk(req.params.id).then((dogData) => {
-    const dog = dogData.get();
+  Dog.findOne({
+    where: {
+      id: req.params.id,
+    },
+    include: [
+      {
+        model: User,
+        attributes: ['name', 'email'],
+        // include: [
+        //   {
+        //     model: Location,
+        //     attributes: ['name'],
+        //   },
+        //   {
+        //     model: Dog,
+        //     attributes: ['dog_name'],
+        //   },
+        // ],
+      },
+    ],
+  }).then((dogData) => {
+    const dog = dogData.get({ plain: true });
     console.log(dog);
     res.render('dog', { dog });
     return;

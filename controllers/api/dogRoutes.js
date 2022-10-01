@@ -32,7 +32,7 @@ router.get('/:id', async (req, res) => {
       include: [
         {
           model: User,
-          // attributes: ['name', 'email'],
+          attributes: ['name', 'email'],
           // include: [
           //   {
           //     model: Location,
