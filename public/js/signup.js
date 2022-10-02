@@ -8,7 +8,7 @@ const signupFormHandler = async (event) => {
   const dogInfoEl = document.querySelector('#dogInfo');
   const dogLocationsEl = document.querySelector('#dogLocations');
 
-  const response = await fetch('/api/user/signup', {
+  const response = await fetch('/api/user', {
     method: 'POST',
     body: JSON.stringify({
       username: usernameEl.value,
