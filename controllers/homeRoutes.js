@@ -52,7 +52,7 @@ router.get('/dates', (req, res) => {
       })
     );
     console.log(dogs);
-    console.log(dogs[0].user.locations);
+    // console.log(dogs[0].user.locations);
     res.render('allDogs', { dogs });
     return;
   });

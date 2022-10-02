@@ -33,3 +33,13 @@ body {
   font-size: 1.4rem;
   text-align: center;
 }
+
+.dog-gallery {
+  flex: 4;
+  background-color: #fff;
+  padding: 50px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}

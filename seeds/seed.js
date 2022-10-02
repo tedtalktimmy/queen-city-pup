@@ -51,50 +51,57 @@ const seedDatabase = async () => {
   });
   await Dog.create({
     dog_name: 'Buddy',
-    about: 'ihsdkfghsli',
+    about:
+      'Buddy loves to chase and be chased! He drives the squirrels crazy...but he is super friendly with other dogs. He is available to play anytime...just message us and we will set something up!',
     image: '/images/buddy.jpg',
     owner_id: 1,
   });
   await Dog.create({
     dog_name: 'Sparky',
-    about: 'lorem sdjkhfsdj',
+    about:
+      'Looking for a playdate that will wear your dog out? Meet up with Sparky! He loves to run and investigate and is happy with friends to play with. However, he is on the smaller side so if your dog is an alpha and larger - let us know when you message.',
     image: '/images/sparky.jpg',
     owner_id: 2,
   });
   await Dog.create({
     dog_name: 'Rover',
-    about: 'sdhfiuhsdrlirgh',
+    about: 'Loves other dogs, playing fetch and eating treats.',
     image: '/images/rover.jpg',
     owner_id: 2,
   });
   await Dog.create({
     dog_name: 'Max',
-    about: 'dfiugsrkrugfsh',
+    about:
+      'Max is a supersmart team player...he will engage your dog in games of tag and friendly wrestling. He is about 50 pounds of lovable fun.',
     image: '/images/max.jpg',
     owner_id: 3,
   });
   await Dog.create({
     dog_name: 'Dexter',
-    about: 'dhfhzsdgf',
+    about:
+      'Dexter is a very curious puppy with tons of energy. We are looking for older dogs to teach him a few manners in the park but he is harmless otherwise.',
     image: '/images/dexter.jpg',
     owner_id: 4,
   });
   await Dog.create({
     dog_name: 'Brady',
-    about: 'fiughgrh',
+    about:
+      'Big, beautiful Brady...super sweet but territorial of his family. He likes to play one on one with larger dogs...maostly chasing and wrestling. We are willing to drive anywhere to meet up.',
     image: '/images/brady.jpg',
     owner_id: 5,
   });
   await Dog.create({
     dog_name: 'Zeus',
-    about: 'foghlidrbuhgdijg',
+    about:
+      'Super smart and sweet shepherd...Zues likes to have fun with all the dogs in the park but is quick to roll over when an alpha comes along. Very friendly and great with smaller dogs who need a big brother.',
     image: '/images/zeus.jpg',
     owner_id: 6,
   });
   await Dog.create({
     dog_name: 'Bentley',
-    about: 'djhfiseruhindrgh',
-    image: '/images/zeus.jpg',
+    about:
+      'Bentley is learning how to play well with others. He loves dog parks and likes to run all over the equipment. He is a big sniffer.',
+    image: '/images/bentley.jpg',
     owner_id: 5,
   });
 
