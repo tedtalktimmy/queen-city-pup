@@ -1,14 +1,17 @@
-<div class="card">
-  <div class="card-header col-md-10">
+{{!-- <div class="row align-center mb-5">
+  <div class="col-md-6"> --}}
+
+{{!-- <div class="dog-gallery"> --}}
+  <div class=" col-md-10">
     <h2>
       Playdate Pups
-    </h2>
-    </div>
-    
- 
- 
+    </h2>   
+  </div>  
+ <section class = "container-md dog-gallery">
+  <div class = "row">
+ <div class = "dog-card">
   {{#each dogs as |dog|}}
-    <div class="dish col-md-5">
+    <div class="dish col">
       
       <p>
         <a href="/furr-baby/{{dog.id}}">
@@ -16,7 +19,7 @@
         </a>
       </p>
     </div>
-    <div class="col-md-7">
+    <div class= "card-body col">
       {{#if dog.image}}
       <img src="{{dog.image}}" alt="{{dog.dog_name}}">
       {{else}}
@@ -33,6 +36,7 @@
     </div>
   {{/each}}
 </div>
-
+</div>
+</section>
 <!-- This is the form for adding a new dish -->
 {{!-- <script src='/js/.js'></script> --}}
