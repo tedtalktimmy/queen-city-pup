@@ -1,26 +1,26 @@
 {{!-- <div class="row align-center mb-5">
   <div class="col-md-6"> --}}
 
-{{!-- <div class="dog-gallery"> --}}
-  <div class=" col-md">
-    <h2 class="text-success text-center mt-4 mb-4">
-      Playdate Pups
-    </h2>   
-  </div>  
- <section class = "container-md dog-gallery border">
-  <div class = "row">
-    <script id="dogs-template" type="text/x-handlebars-template">
+    {{!-- <div class="dog-gallery"> --}}
+      <div class=" col-md">
+        <h2 class="text-success text-center mt-4 mb-4">
+          Playdate Pups
+        </h2>
+      </div>
+      <section class="container-md dog-gallery">
+        <div class="row">
+          <script id="dogs-template" type="text/x-handlebars-template">
  <div class = "dog-card">
   {{#each dogs as |dog|}}
-    <div class= "card-body col">
-      <p>
-        <a href="/furr-baby/{{dog.id}}">
+    <div class= "card-body">
+      <p class="dog-card-header text-center" >
+        <a class="text-decoration-none text-warning" href="/furr-baby/{{dog.id}}">
         {{dog.dog_name}}
         </a>
       </p>
       {{#if dog.image}}
       <a href="/furr-baby/{{dog.id}}">
-      <img src="{{dog.image}}" alt="{{dog.dog_name}}">
+      <img src="{{dog.image}}" class="img-fluid" alt="{{dog.dog_name}}">
       </a>
       {{else}}
       <img src="https://via.placeholder.com/225" alt="placeholder">
@@ -32,12 +32,13 @@
       <h6>{{location.name}}</h6>
       {{/each}}
       </script>
-    
-    </div>
-  {{/each}}
-</div>
-</div>
-</section>
 
-<!-- This is the form for adding a new dish -->
-{{!-- <script src='/js/.js'></script> --}}
+        </div>
+        {{/each}}
+    </div>
+  </div>
+  </section>
+
+  <!-- This is the form for adding a new dish -->
+  {{!--
+  <script src='/js/.js'></script> --}}

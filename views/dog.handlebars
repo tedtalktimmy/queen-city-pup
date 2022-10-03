@@ -1,22 +1,25 @@
 <div class="dog-card">
-  <div class="dog-card-header">
+  <div class="dog-card-header text-center">
     {{dog.dog_name}}
   </div>
   <div class="card-body">
     {{#if dog.image}}
-    <img src="{{dog.image}}" alt="{{dog.dog_name}}">
+    <img src="{{dog.image}}" alt="{{dog.dog_name}}" class="img-fluid">
     {{else}}
     <img src="https://via.placeholder.com/225" alt="placeholder">
     {{/if}}
-    <p>
+    <h6>
       About:
       {{dog.about}}
-    </p>
+    </h6>
     <p>
       Owner:
     {{dog.user.name}}
     </p>
-    <a href="mailto:{{dog.user.email}}"> <button type="button">Set Up a Date!</button></a>
+    <a href="mailto:{{dog.user.email}}"> <button class="dog-button" type="button">Set Up a Date!</button></a>
    
   </div>
 </div>
+
+
+
