@@ -29,7 +29,7 @@ router.get('/stores', (req, res) => {
 });
 router.get('/dates', (req, res) => {
   if (req.session.loggedIn) {
-    res.redirect('/');
+    res.redirect('/login');
     return;
   }
   Dog.findAll({
@@ -60,7 +60,7 @@ router.get('/dates', (req, res) => {
 
 router.get('/furr-baby/:id', (req, res) => {
   if (req.session.loggedIn) {
-    res.redirect('/');
+    res.redirect('/login');
     return;
   }
   Dog.findOne({

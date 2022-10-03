@@ -8,7 +8,7 @@ const signupFormHandler = async (event) => {
   const dogInfoEl = document.querySelector('#dogInfo');
   const dogLocationsEl = document.querySelector('#dogLocations');
 
-  const response = await fetch('/api/user', {
+  const response = await fetch('/api/users', {
     method: 'POST',
     body: JSON.stringify({
       username: usernameEl.value,
@@ -20,7 +20,7 @@ const signupFormHandler = async (event) => {
     }),
     headers: { 'Content-Type': 'application/json' },
   });
-
+  console.log(username, email, password, dogName, dogInfo, dogLocations);
   if (response.ok) {
     alert('Welcome to our pack!');
     document.location.replace('/dates');
