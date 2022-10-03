@@ -18,6 +18,18 @@ const seedDatabase = async () => {
   await Location.create({
     name: 'Steel Creek',
   });
+  await Location.create({
+    name: 'Myers park',
+  });
+  await Location.create({
+    name: 'Ballantyne',
+  });
+  await Location.create({
+    name: 'Plaza Midwood',
+  });
+  await Location.create({
+    name: 'NoDa',
+  });
 
   await User.create({
     name: 'Ralph',
@@ -109,6 +121,12 @@ const seedDatabase = async () => {
     image: '/images/bentley.jpg',
     owner_id: 5,
   });
+  await Dog.create({
+    dog_name: 'Sadie',
+    about: 'Sadie is very sweet and playful. She likes other dogs.',
+    image: '/images/sadie.jpg',
+    owner_id: 6,
+  });
 
   await UserLocation.create({
     user_id: 1,
@@ -127,22 +145,17 @@ const seedDatabase = async () => {
 
   await UserLocation.create({
     user_id: 4,
-    location_id: 4,
+    location_id: 5,
   });
 
   await UserLocation.create({
-    user_id: 1,
-    location_id: 4,
+    user_id: 5,
+    location_id: 6,
   });
 
   await UserLocation.create({
-    user_id: 3,
-    location_id: 1,
-  });
-
-  await UserLocation.create({
-    user_id: 4,
-    location_id: 2,
+    user_id: 6,
+    location_id: 7,
   });
 
   console.log('data seeded');
