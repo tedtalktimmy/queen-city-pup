@@ -6,9 +6,9 @@ body {
 }
 .dog-card-header {
   font-size: 1.5rem;
-  color: var(--tertiary);
+  color: #ffcc53;
   margin: 0;
-  background-color: var(--light);
+  background-color: #4B9960;
   padding: 0.625rem;
   border-bottom-style: solid;
 }
@@ -20,7 +20,8 @@ body {
   width: 35%;
   min-height: 100%;
   min-width: 35%;
-  border: 3px solid var(--primary);
+  /* border: 3px solid var(--primary); */
+  border: 3px solid #4B9960;
   border-radius: var(--border-radius);
   border-style: solid;
   border-width: medium;
@@ -31,8 +32,20 @@ body {
 .card-body {
   padding: 2.5%;
   font-size: 1.4rem;
-  text-align: center;
+ text-align: center; 
+   border: 3px solid #4B9960;
+   margin: 20px;
+   flex: 0 1 300px;
+   padding: 5px;
+   max-width: 75%;
+   min-height: 100%;
+   min-width: 35%;
 }
+
+.card-body a {
+  background-color:  #4B9960;
+}
+
 
 .dog-gallery {
   flex: 4;
@@ -43,3 +56,10 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+.dog-button{
+  border: 3px solid #4B9960;
+  background-color:  #4B9960;
+  color: #ffcc53;
+}
+
