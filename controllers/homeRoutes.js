@@ -24,6 +24,14 @@ router.get('/signup', (req, res) => {
   res.render('signup');
 });
 
+router.get('/dashboard', (req, res) => {
+  if (!req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+  res.render('dashboard');
+});
+
 router.get('/stores', (req, res) => {
   if (!req.session.loggedIn) {
     res.redirect('login');
@@ -75,16 +83,6 @@ router.get('/furr-baby/:id', (req, res) => {
       {
         model: User,
         attributes: ['name', 'email'],
-        // include: [
-        //   {
-        //     model: Location,
-        //     attributes: ['name'],
-        //   },
-        //   {
-        //     model: Dog,
-        //     attributes: ['dog_name'],
-        //   },
-        // ],
       },
     ],
   }).then((dogData) => {
