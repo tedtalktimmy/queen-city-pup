@@ -4,31 +4,30 @@ const signupFormHandler = async (event) => {
   const usernameEl = document.querySelector('#username');
   const passwordEl = document.querySelector('#password');
   const emailEl = document.querySelector('#email');
-  const dogNameEl = document.querySelector('#dogName');
-  const dogInfoEl = document.querySelector('#dogInfo');
-  const dogLocationsEl = document.querySelector('#dogLocations');
+  // const dogNameEl = document.querySelector('#dogName');
+  // const dogInfoEl = document.querySelector('#dogInfo');
+  // const dogLocationsEl = document.querySelector('#dogLocations');
 
   const response = await fetch('/api/users', {
     method: 'POST',
     body: JSON.stringify({
-      username: usernameEl.value,
+      name: usernameEl.value,
       email: emailEl.value,
       password: passwordEl.value,
-      dogName: dogNameEl.value,
-      dogInfo: dogInfoEl.value,
-      dogLocations: dogLocationsEl.value,
+      // dogName: dogNameEl.value,
+      // dogInfo: dogInfoEl.value,
+      // dogLocations: dogLocationsEl.value,
     }),
     headers: { 'Content-Type': 'application/json' },
   });
-  console.log(username, email, password, dogName, dogInfo, dogLocations);
+  console.log(response);
   if (response.ok) {
     alert('Welcome to our pack!');
     document.location.replace('/dates');
   } else {
     alert('Failed to sign up');
   }
-  response.json().then(data => console.log(data));
+  // response.json().then(data => console.log(data));
 };
 
-document.querySelector('#signup');
-document.querySelector('submit', signupFormHandler);
+document.querySelector('.signup').addEventListener('submit', signupFormHandler);

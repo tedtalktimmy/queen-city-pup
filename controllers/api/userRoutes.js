@@ -50,8 +50,8 @@ router.get('/:id', async (req, res) => {
 router.post('/', async (req, res) => {
   try {
     console.log('Post::signup::req.body = ', req.body);
-    const userData = await User.create({username: req.body.username, email: req.body.email, password: req.body.password });
-
+    const userData = await User.create({name: req.body.name, email: req.body.email, password: req.body.password });
+    console.log(userData);
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.loggedIn = true;

@@ -2,9 +2,9 @@ const router = require('express').Router();
 const { User, Dog, Location, UserLocation } = require('../models');
 
 router.get('/', async (req, res) => {
-  const userData = await User.findAll();
-  const users = userData.map((user) => user.get());
-  res.render('index', { users });
+  // const userData = await User.findAll();
+  // const users = userData.map((user) => user.get());
+  res.render('index', { loggedIn: req.session.loggedIn });
 });
 
 router.get('/login', (req, res) => {
@@ -17,19 +17,23 @@ router.get('/login', (req, res) => {
 });
 
 router.get('/signup', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
   res.render('signup');
 });
 
 router.get('/stores', (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect('/');
+  if (!req.session.loggedIn) {
+    res.redirect('login');
     return;
   }
   res.render('stores');
 });
 router.get('/dates', (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect('/login');
+  if (!req.session.loggedIn) {
+    res.redirect('login');
     return;
   }
   Dog.findAll({
@@ -53,13 +57,13 @@ router.get('/dates', (req, res) => {
     );
     console.log(dogs);
     // console.log(dogs[0].user.locations);
-    res.render('allDogs', { dogs });
+    res.render('allDogs', { dogs, loggedIn: req.session.loggedIn });
     return;
   });
 });
 
 router.get('/furr-baby/:id', (req, res) => {
-  if (req.session.loggedIn) {
+  if (!req.session.loggedIn) {
     res.redirect('/login');
     return;
   }
@@ -92,22 +96,22 @@ router.get('/furr-baby/:id', (req, res) => {
 });
 
 router.get('/location', (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect('/');
+  if (!req.session.loggedIn) {
+    res.redirect('login');
     return;
   }
 
-  res.render('location');
+  res.render('location', {loggedIn: req.session.loggedIn});
 });
 
-router.post('/logout', (req, res) => {
-  if (req.session.loggedIn) {
-    req.session.destroy(() => {
-      res.status(204).end();
-    });
-  } else {
-    res.status(404).end();
-  }
-});
+// router.post('/logout', (req, res) => {
+//   if (req.session.loggedIn) {
+//     req.session.destroy(() => {
+//       res.status(204).end();
+//     });
+//   } else {
+//     res.status(404).end();
+//   }
+// });
 
 module.exports = router;
