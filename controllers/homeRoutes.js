@@ -29,7 +29,7 @@ router.get('/stores', (req, res) => {
     res.redirect('login');
     return;
   }
-  res.render('stores');
+  res.render('stores',{loggedIn: (req.session.loggedIn)});
 });
 router.get('/dates', (req, res) => {
   if (!req.session.loggedIn) {
