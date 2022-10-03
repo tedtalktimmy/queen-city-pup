@@ -49,6 +49,11 @@ const seedDatabase = async () => {
     email: 'jill@yahoo.com',
     password: 'ght56dfh78',
   });
+  await User.create({
+    name: 'Bob',
+    email: 'bob@yahoo.com',
+    password: '12345678',
+  });
   await Dog.create({
     dog_name: 'Buddy',
     about:
