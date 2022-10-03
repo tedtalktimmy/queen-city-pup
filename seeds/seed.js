@@ -130,6 +130,16 @@ const seedDatabase = async () => {
     location_id: 4,
   });
 
+  await UserLocation.create({
+    user_id: 3,
+    location_id: 1,
+  });
+
+  await UserLocation.create({
+    user_id: 4,
+    location_id: 2,
+  });
+
   console.log('data seeded');
   // for (const project of projectData) {
   //   await Project.create({

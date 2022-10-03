@@ -2,41 +2,42 @@
   <div class="col-md-6"> --}}
 
 {{!-- <div class="dog-gallery"> --}}
-  <div class=" col-md-10">
-    <h2>
+  <div class=" col-md">
+    <h2 class="text-success text-center mt-4 mb-4">
       Playdate Pups
     </h2>   
   </div>  
- <section class = "container-md dog-gallery">
+ <section class = "container-md dog-gallery border">
   <div class = "row">
+    <script id="dogs-template" type="text/x-handlebars-template">
  <div class = "dog-card">
   {{#each dogs as |dog|}}
-    <div class="dish col">
-      
+    <div class= "card-body col">
       <p>
         <a href="/furr-baby/{{dog.id}}">
         {{dog.dog_name}}
         </a>
       </p>
-    </div>
-    <div class= "card-body col">
       {{#if dog.image}}
+      <a href="/furr-baby/{{dog.id}}">
       <img src="{{dog.image}}" alt="{{dog.dog_name}}">
+      </a>
       {{else}}
       <img src="https://via.placeholder.com/225" alt="placeholder">
       {{/if}}
-      <p>
+      {{!-- <h6>
         {{dog.about}}
-      </p>
-
-        {{#each dog.user.locations as |location|}}
-        <p>{{location.name}}</p>
-        {{/each}}
-
+      </h6> --}}
+      {{#each dog.user.locations as | location|}}
+      <h6>{{location.name}}</h6>
+      {{/each}}
+      </script>
+    
     </div>
   {{/each}}
 </div>
 </div>
 </section>
+
 <!-- This is the form for adding a new dish -->
 {{!-- <script src='/js/.js'></script> --}}
