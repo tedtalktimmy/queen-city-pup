@@ -1,0 +1,49 @@
+<div>
+  <h1 class="text-center pt-5 text-success">
+    DASHBOARD: Your Dogs
+  </h1>
+</div>
+
+<div class="container">
+  <div class="row align-items-center pt-5">
+    <div class="col-lg-5">
+      <div class="card-body">
+        <a href="/location"><img src='/images/myDog.jpg' alt="article-image" class="card-img-top"></a>
+      </div>
+    </div>
+    {{!-- <div class="container ">
+  <div class="row mx-auto d-flex align-items-center"> --}}
+    <div class="col-lg-5 col-md-offset-3 mx-auto">
+      <br>
+      <h2 class="text-center">Add a Dog Here!</h2>
+      <form class="add-dog">
+        
+        <div class="form-control-lg">
+          <label>Dog Name</label>
+          <input type="dogName" class="form-control" id="dogName" placeholder="DogName">
+        </div>
+        <div class="form-control-lg">
+          <label>Tell us a bit about your dog!</label>
+          <input type="dogInfo" class="form-control" id="dogInfo" placeholder="Dog Name">
+        </div>
+        <div class="form-control-lg">
+          <label>Please select where your pup likes to play?</label>
+          <select type="location" id="dogLocations">
+            <option value="location">Southend</option>
+            <option value="location">Northside</option>
+            <option value="location">Steele Creek</option>
+            <option value="location">Myers Park</option>
+            <option value="location">Ballantyne</option>
+            <option value="location">Plaza Midwood</option>
+            <option value="location">NoDa</option>
+          </select>
+        </div>
+        <br>
+        <button type="submit" id="signup" class="btn btn-success">Add Your Dog</button>
+      </form>
+  
+    </div>
+  </div>
+</div>
+
+<script src="/js/signup.js"></script>
