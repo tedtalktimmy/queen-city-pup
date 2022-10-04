@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User, Dog, Location, UserLocation } = require('../models');
+const pullAllBy = require('lodash.pullallby');
 
 router.get('/', async (req, res) => {
   // const userData = await User.findAll();
@@ -71,14 +72,17 @@ router.get('/dates', (req, res) => {
       },
     ],
   }).then((dogData) => {
-    const dogs = dogData.map((dog) =>
+    let dogs = dogData.map((dog) =>
       dog.get({
         plain: true,
       })
     );
-    console.log(dogs);
+    let featured = dogs.filter(dog => dog.featured);
+    pullAllBy(dogs, [{ featured: true }], 'featured');
+    console.log('DOGS', dogs);
+    console.log('FEATURED', featured);
     // console.log(dogs[0].user.locations);
-    res.render('allDogs', { dogs, loggedIn: req.session.loggedIn });
+    res.render('allDogs', { featured, dogs, loggedIn: req.session.loggedIn });
     return;
   });
 });
