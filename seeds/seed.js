@@ -79,6 +79,7 @@ const seedDatabase = async () => {
       'Looking for a playdate that will wear your dog out? Meet up with Sparky! He loves to run and investigate and is happy with friends to play with. However, he is on the smaller side so if your dog is an alpha and larger - let us know when you message.',
     image: '/images/sparky.jpg',
     owner_id: 2,
+    featured: true,
   });
   await Dog.create({
     dog_name: 'Rover',
@@ -92,6 +93,7 @@ const seedDatabase = async () => {
       'Max is a supersmart team player...he will engage your dog in games of tag and friendly wrestling. He is about 50 pounds of lovable fun.',
     image: '/images/max.jpg',
     owner_id: 3,
+    featured: true,
   });
   await Dog.create({
     dog_name: 'Dexter',

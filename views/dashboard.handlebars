@@ -1,6 +1,6 @@
 <div>
   <h1 class="text-center pt-5 text-success">
-   Welcome {{name}}
+   Welcome, {{name}}
   </h1>
 </div>
 
@@ -12,7 +12,7 @@
       <div class="card-body">
         <h2>{{dog.dog_name}}</h2>
         <a href="/location"><img src= {{dog.image}} alt="article-image" class="card-img-top"></a>
-      <p>{{dog.about}}</p>
+      <h6 class="about pt-2">{{dog.about}}</h6>
       </div>
     </div>
     {{/each}}
@@ -25,11 +25,11 @@
         
         <div class="form-control-lg">
           <label>Dog Name</label>
-          <input type="dogName" class="form-control" id="dogName" placeholder="DogName">
+          <input type="dogName" class="form-control" id="dogName" placeholder="Name">
         </div>
         <div class="form-control-lg">
           <label>Tell us a bit about your dog!</label>
-          <input type="dogInfo" class="form-control" id="dogInfo" placeholder="Dog Name">
+          <input type="dogInfo" class="form-control" id="dogInfo" placeholder="Description">
         </div>
         <div class="form-control-lg">
           <label>Please select where your pup likes to play?</label>

@@ -24,6 +24,10 @@ Dog.init(
       type: DataTypes.STRING,
 
     },
+    featured: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
+    },
     owner_id: {
       type: DataTypes.INTEGER,
       allowNull: false,

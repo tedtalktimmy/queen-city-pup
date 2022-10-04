@@ -1,49 +1,59 @@
-{{!-- <div class="row align-center mb-5">
-  <div class="col-md-6"> --}}
-
-    {{!-- <div class="dog-gallery"> --}}
-      <div class=" col-md">
-        <h2 class="text-success text-center mt-4 mb-4">
-          Playdate Pups
-        </h2>
-      </div>
-      <section class="container-md dog-gallery">
-        <div>
-          <script id="dogs-template" type="text/x-handlebars-template">
- <div class = "dog-card">
-  {{#each dogs as |dog|}}
-    <div class= "card-body">
-      <p class="dog-card-header text-center" >
-        <a class="text-decoration-none text-warning" href="/furr-baby/{{dog.id}}">
-        {{dog.dog_name}}
-        </a>
-      </p>
-      {{#if dog.image}}
-      <a href="/furr-baby/{{dog.id}}">
-      <img src="{{dog.image}}" class="img-fluid" alt="{{dog.dog_name}}">
+<div class=" col-md">
+  <h2 class="text-success text-center mt-4 mb-4 display-2">
+    Playdate Pups
+  </h2>
+</div>
+<h4 class="text-success text-center display-4">
+  Featured Pups
+</h4>
+<section class="container-md dog-gallery">
+  {{#each featured}}
+  <div class= "card-body bg-light-yellow">
+    
+    <p class="dog-card-header text-center" >
+      <a class="text-decoration-none text-warning" href="/furr-baby/{{id}}">
+      {{dog_name}}
       </a>
-      {{else}}
-      <img src="https://via.placeholder.com/225" alt="placeholder">
-      {{/if}}
-      {{!-- <h6>
-        {{dog.about}}
-      </h6> --}}
-      {{#each dog.user.locations as | location|}}
-      <h6>{{location.name}}</h6>
-      {{/each}}
-      </script>
+    </p>
+    
+    {{#if image}}
+    <a href="/furr-baby/{{id}}">
+    <img src="{{image}}" class="img-fluid" alt="{{dog_name}}">
+    </a>
+    {{else}}
+    <img src="https://via.placeholder.com/225" alt="placeholder">
+    {{/if}}
 
-        </div>
-        {{/each}}
-    </div>
+    {{#each user.locations as | location|}}
+    <h6>{{location.name}}</h6>
+    {{/each}}
   </div>
-  </section>
+  {{/each}}
+</section>
+<h4 class="text-success text-center mb-2 display-4">
+  Playful Pups
+</h4>
+<section class="container-md dog-gallery">
+  {{#each dogs}}
+  <div class= "card-body">
+    
+    <p class="dog-card-header text-center" >
+      <a class="text-decoration-none text-warning" href="/furr-baby/{{id}}">
+      {{dog_name}}
+      </a>
+    </p>
+    
+    {{#if image}}
+    <a href="/furr-baby/{{id}}">
+    <img src="{{image}}" class="img-fluid" alt="{{dog_name}}">
+    </a>
+    {{else}}
+    <img src="https://via.placeholder.com/225" alt="placeholder">
+    {{/if}}
 
-  <!-- This is the form for adding a new dish -->
-  {{!--
-  <script src='/js/.js'></script> --}}
-
-
-
-
-
+    {{#each user.locations as | location|}}
+    <h6>{{location.name}}</h6>
+    {{/each}}
+  </div>
+  {{/each}}
+</section>

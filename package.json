@@ -23,6 +23,7 @@
     "express-session": "^1.17.3",
     "handlebars": "^4.7.7",
     "handlebars-async-helpers": "^1.0.4",
+    "lodash.pullallby": "^4.7.0",
     "mysql2": "^2.3.3",
     "sequelize": "^6.23.2"
   },

@@ -11,6 +11,10 @@ body {
   width:100%
 }
 
+.bg-light-yellow {
+  background-color: #ffcc53;
+}
+
 .dog-card-header {
   font-size: 1.5rem;
   color: #ffcc53;
@@ -62,7 +66,7 @@ body {
 .dog-gallery {
   flex: 4;
   background-color: #fff;
-  padding: 50px;
+  padding: 20px;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
