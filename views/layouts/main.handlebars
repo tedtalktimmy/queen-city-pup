@@ -50,12 +50,9 @@
             </li>
             {{#if loggedIn}}
               <li class="nav-item">
-                <a class="nav-link text-warning" href="/dashboard">Dashboard</a>
+                <a id='dashboard'class="nav-link text-warning" href="/dashboard">Dashboard</a>
               </li>
-            {{else}}
-            {{/if}}
-
-              {{#if loggedIn}}
+                
             <li class="nav-item">
                 <a id="logout" class="nav-link text-warning" href="/">Logout</a>
               {{else}}
@@ -66,8 +63,8 @@
                 >Login</a>
 
                 {{! <a href="/login"><button>Login</button></a> }}
-              {{/if}}
             </li>
+              {{/if}}
           </ul>
         </div>
       </div>
