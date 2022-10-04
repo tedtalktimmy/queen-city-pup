@@ -1,14 +1,15 @@
+<div class="single-dog-page">
 <div class="dog-card">
+  {{!-- <div class="card-body"> --}}
   <div class="dog-card-header text-center">
     {{dog.dog_name}}
   </div>
-  <div class="card-body">
     {{#if dog.image}}
     <img src="{{dog.image}}" alt="{{dog.dog_name}}" class="img-fluid">
     {{else}}
     <img src="https://via.placeholder.com/225" alt="placeholder">
     {{/if}}
-    <h6>
+    <h6 class="text-center">
       About:
       {{dog.about}}
     </h6>
@@ -18,7 +19,8 @@
     </p>
     <a href="mailto:{{dog.user.email}}"> <button class="dog-button" type="button">Set Up a Date!</button></a>
    
-  </div>
+  {{!-- </div> --}}
+</div>
 </div>
 
 
