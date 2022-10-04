@@ -1,78 +1,103 @@
-<!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TITLE</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-  <link rel="stylesheet" href="/css/style.css">
-</head>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Queen City Pups</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
 
-<body>
-  <header>
-  </header>
-  <nav class="navbar navbar-expand-lg navbar-light bg-success p-4">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="/">
-        <img src="/images/Queen.png" style="width: 20rem;">
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end fs-5" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link text-warning" href="/location">Pup Parks</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-warning" href="/stores">Dog Stores</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-warning" href="/dates">Play Dates</a>
-          </li>
-
-          <li class="nav-item">
+  <body>
+    <header>
+    </header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-success p-4">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+          <img src="/images/Queen.png" style="width: 20rem;" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end fs-5"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link text-warning" href="/location">Pup Parks</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-warning" href="/stores">Dog Stores</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-warning" href="/dates">Play Dates</a>
+            </li>
             {{#if loggedIn}}
-            <a id="logout" class="nav-link text-warning" href="/">Logout</a>
+              <li class="nav-item">
+                <a class="nav-link text-warning" href="/dashboard">Dashboard</a>
+              </li>
             {{else}}
-            <a class="nav-link text-warning" id="login" href="/login">Login</a>
-
-            {{!-- <a href="/login"><button>Login</button></a> --}}
             {{/if}}
-          </li>
-        </ul>
+
+            <li class="nav-item">
+              {{#if loggedIn}}
+                <a id="logout" class="nav-link text-warning" href="/">Logout</a>
+              {{else}}
+                <a
+                  class="nav-link text-warning"
+                  id="login"
+                  href="/login"
+                >Login</a>
+
+                {{! <a href="/login"><button>Login</button></a> }}
+              {{/if}}
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
 
-  <main>
-    <aside>
-      {{!-- <h2>WORDS</h2> --}}
-    </aside>
-    <div class="">
-      {{{body}}}
-    </div>
-  </main>
-  {{#if loggedIn}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
+    <main>
+      <aside>
+        {{! <h2>WORDS</h2> }}
+      </aside>
+      <div class="">
+        {{{body}}}
+      </div>
+    </main>
+    {{#if loggedIn}}
+      <script src="/js/logout.js"></script>
+    {{/if}}
 
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-  <footer> 
-    <div class="footer">
-      &copy; Queen City Pups 2022
-  </div>
-  </footer>
-</body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <footer>
+      <div class="footer">
+        &copy; Queen City Pups 2022
+      </div>
+    </footer>
+  </body>
 
 </html>
 
-
-{{!--
+{{!
 <nav class="nav navbar py-5 bg-success">
-  <img src="/images/Queen.png" alt="logo" style="width:20rem"> --}}
+  <img src="/images/Queen.png" alt="logo" style="width:20rem"> }}
