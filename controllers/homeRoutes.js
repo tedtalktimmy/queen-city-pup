@@ -30,6 +30,7 @@ router.get('/dashboard', async (req, res) => {
     res.redirect('/');
     return;
   }
+  res.render('dashboard', {loggedIn: (req.session.loggedIn)});
   const user = await User.findOne({
     where: {
       id: req.session.user_id,
