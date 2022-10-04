@@ -24,12 +24,25 @@ router.get('/signup', (req, res) => {
   res.render('signup');
 });
 
-router.get('/dashboard', (req, res) => {
+router.get('/dashboard', async (req, res) => {
   if (!req.session.loggedIn) {
     res.redirect('/');
     return;
   }
-  res.render('dashboard');
+  const user = await User.findOne({
+    where: {
+      id: req.session.user_id,
+    },
+    include: [
+      {
+        model: Dog,
+        attributes: ['dog_name', 'image', 'about'],
+      },
+    ],
+  });
+  const userData= user.get({plain:true});
+  console.log(userData);
+  res.render('dashboard', userData);
 });
 
 router.get('/stores', (req, res) => {

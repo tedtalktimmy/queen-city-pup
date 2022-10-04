@@ -23,7 +23,7 @@ const signupFormHandler = async (event) => {
   console.log(response);
   if (response.ok) {
     alert('Welcome to our pack!');
-    document.location.replace('/dates');
+    document.location.replace('/dashboard');
   } else {
     alert('Failed to sign up');
   }
